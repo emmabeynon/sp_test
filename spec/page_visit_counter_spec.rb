@@ -19,5 +19,12 @@ RSpec.describe PageVisitCounter do
         "/path_b" => 1,
       )
     end
+
+    it "raises an error if the paths aren't provided as an array" do
+      counter = described_class.new("a path")
+      expect { counter.count_visits }.to raise_error(
+        RuntimeError, "Paths must be provided as an array"
+      )
+    end
   end
 end
