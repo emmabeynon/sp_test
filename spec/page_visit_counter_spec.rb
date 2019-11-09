@@ -10,4 +10,14 @@ RSpec.describe PageVisitCounter do
       expect(counter.paths).to eq(paths)
     end
   end
+
+  describe "#count_visits" do
+    it "returns a hash of pages and number of visits" do
+      counter = described_class.new(paths)
+      expect(counter.count_visits).to include(
+        "/path_a" => 2,
+        "/path_b" => 1,
+      )
+    end
+  end
 end
