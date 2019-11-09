@@ -6,6 +6,10 @@ class VisitCountOrderer
   end
 
   def order_descending
+    unless page_visits.is_a?(Hash)
+      raise "Pages and visit counts must be provided as a hash"
+    end
+
     page_visits.sort_by { |page, visit_count| visit_count }.reverse
   end
 end

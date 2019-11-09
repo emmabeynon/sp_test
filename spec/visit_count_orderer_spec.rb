@@ -22,5 +22,12 @@ RSpec.describe VisitCountOrderer do
         [["/path_b", 23], ["/path_c", 16], ["/path_a", 5]]
       )
     end
+
+    it "raises an error if the pages and visit counts aren't provided as a hash" do
+      orderer = described_class.new("a page")
+      expect { orderer.order_descending }.to raise_error(
+        RuntimeError, "Pages and visit counts must be provided as a hash"
+      )
+    end
   end
 end
