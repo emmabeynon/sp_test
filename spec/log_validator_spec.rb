@@ -10,4 +10,12 @@ RSpec.describe LogValidator do
       expect(log_validator.logfile).to eq(valid_logfile)
     end
   end
+
+  describe "#validate" do
+    it "returns a list of stripped paths" do
+      log_validator = described_class.new(valid_logfile)
+      paths = %w(/help_page/1 /contact /home /about/2 /help_page/1 /help_page/1 /help_page/1 /home /contact /help_page/1 /home)
+      expect(log_validator.validate).to eq(paths)
+    end
+  end
 end
