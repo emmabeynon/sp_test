@@ -8,7 +8,8 @@ class PageVisitCounter
   def count_visits
     raise "Paths must be provided as an array" unless paths.is_a?(Array)
 
-    paths.each_with_object({}) do |path, hash|
+    paths.each_with_object({}) do |path_data, hash|
+      path = path_data.first
       hash.has_key?(path) ? hash[path] += 1 : hash[path] = 1
     end
   end
