@@ -18,10 +18,10 @@ RSpec.describe LogValidator do
       paths = [
         %w(/help_page/1 126.318.035.038),
         %w(/contact 184.123.665.067),
-        %w(/home 184.123.665.067),
+        %w(/home 235.313.352.950),
         %w(/about/2 444.701.448.104),
         %w(/help_page/1 929.398.951.889),
-        %w(/help_page/1 722.247.931.582),
+        %w(/help_page/1 126.318.035.038),
         %w(/help_page/1 646.865.545.408),
         %w(/home 235.313.352.950),
         %w(/contact 184.123.665.067),
