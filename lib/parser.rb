@@ -17,3 +17,10 @@ class Parser
     VisitsPrinter.new(ordered_page_visits).print_visits
   end
 end
+
+if $0 == __FILE__
+  raise "Please provide a path to a logfile" unless ARGV[0]
+
+  logfile = ARGV[0]
+  Parser.new(logfile).ordered_page_visits
+end
