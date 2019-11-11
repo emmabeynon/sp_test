@@ -10,4 +10,11 @@ RSpec.describe VisitsPrinter do
       expect(printer.visits).to eq (visits)
     end
   end
+
+  describe "#print_visits" do
+    it "prints the number of visits for each path" do
+      visits = "/path_a 18 page visits\n/path_b 12 page visits\n/path_c 3 page visits\n"
+      expect { printer.print_visits }.to output(visits).to_stdout
+    end
+  end
 end

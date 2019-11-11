@@ -4,4 +4,8 @@ class VisitsPrinter
   def initialize(visits)
     @visits = visits
   end
+
+  def print_visits
+    visits.each { |path, visits| puts "#{path} #{visits} page visits" }
+  end
 end
